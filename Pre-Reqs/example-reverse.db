@@ -1,0 +1,28 @@
+$TTL 1W
+@	IN	SOA	ns1.example.com.	root (
+			2019070700	; serial
+			3H		; refresh (3 hours)
+			30M		; retry (30 minutes)
+			2W		; expiry (2 weeks)
+			1W )		; minimum (1 week)
+	IN	NS	ns1.example.com.
+;
+; syntax is "last octet" and the host must have fqdn with trailing dot
+97	IN	PTR	control-plane-1.ocp4.example.com.
+98	IN	PTR	control-plane-2.ocp4.example.com.
+99	IN	PTR	control-plane-3.ocp4.example.com.
+;
+96	IN	PTR	bootstrap.ocp4.example.com.
+;
+5	IN	PTR	api.ocp4.ocp4.example.com.
+5	IN	PTR	api-int.ocp4.ocp4.example.com.
+;
+101	IN	PTR	compute-1.ocp4.example.com.
+102	IN	PTR	compute-2.ocp4.example.com.
+103	IN	PTR	compute-3.ocp4.example.com.
+;
+; Create entries for the storage hosts
+111 IN  PTR storage-1.ocp4.example.com.
+112 IN  PTR storage-2.ocp4.example.com.
+113 IN  PTR storage-3.ocp4.example.com.
+;EOF

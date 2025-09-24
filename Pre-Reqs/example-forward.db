@@ -1,0 +1,43 @@
+$TTL 1W
+@	IN	SOA	ns1.example.com.	root (
+			2019070700	; serial
+			3H		; refresh (3 hours)
+			30M		; retry (30 minutes)
+			2W		; expiry (2 weeks)
+			1W )		; minimum (1 week)
+	IN	NS	ns1.example.com.
+	IN	MX 10	smtp.example.com.
+;
+;
+ns1	IN	A	192.168.1.5
+smtp	IN	A	192.168.1.5
+; Starting with ocp 4.6 we can ignore the helper node for vsphere installs
+helper	IN	A	192.168.1.5
+helper.ocp4	IN	A	192.168.1.5
+;
+; The api points to the IP of your load balancer
+api.ocp4		IN	A	192.168.1.5
+api-int.ocp4		IN	A	192.168.1.5
+;
+; The wildcard also points to the load balancer
+*.apps.ocp4		IN	A	192.168.1.5
+;
+; Create entry for the bootstrap host
+bootstrap.ocp4	IN	A	192.168.1.96
+;
+; Create entries for the control-plane (master) hosts
+control-plane-1.ocp4		IN	A	192.168.1.97
+control-plane-2.ocp4		IN	A	192.168.1.98
+control-plane-3.ocp4		IN	A	192.168.1.99
+;
+; Create entries for the compute (worker) hosts
+compute-1.ocp4		IN	A	192.168.1.101
+compute-2.ocp4		IN	A	192.168.1.102
+compute-3.ocp4		IN	A	192.168.1.103
+;
+; Create entries for the storage hosts
+storage-1.ocp4		IN	A	192.168.1.111
+storage-2.ocp4		IN	A	192.168.1.112
+storage-3.ocp4       IN  A   192.168.1.113
+;
+;EOF
