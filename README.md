@@ -2,6 +2,8 @@
 
 Documentation of OCP 4.7 + Storage nodes deployment on VMWare with Terraform
 
+> **Note:** This repo is based on the official OpenShift installer UPI vSphere repository: https://github.com/openshift/installer/tree/main/upi/vsphere
+
 ## Table of Contents
 
 ## Pre-Reqs
